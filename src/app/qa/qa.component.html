@@ -1,0 +1,18 @@
+<div class="qa-container">
+    <form (ngSubmit)="askQuestion()" class="qa-form">
+        <label for="question" class="qa-label">Ask a question about the codebook:</label>
+        <input
+            id="question"
+            [(ngModel)]="question"
+            name="question"
+            required
+            class="qa-input"
+            placeholder="Type your question..."
+            (ngModelChange)="onQuestionChange()" />
+        <button type="submit" class="qa-btn">Ask</button>
+    </form>
+    <div *ngIf="answer" class="answer">
+        <strong>Answer:</strong>
+        <pre class="qa-answer">{{ answer }}</pre>
+    </div>
+</div>
